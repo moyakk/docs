@@ -82,3 +82,44 @@ tcpdump src 192.168.0.10 and dst port 8080
 ```
 tcpdump src 192.168.0.10 and src port not 22
 ```
+
+## 네트워크 인터페이스 목록을 확인하는 방법
+
+### ip
+
+```
+$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 0c:c4:7a:c4:90:e8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.248/24 brd 192.168.0.255 scope global noprefixroute eno1
+       valid_lft forever preferred_lft forever
+3: eno2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether 0c:c4:7a:c4:90:e9 brd ff:ff:ff:ff:ff:ff
+```
+
+조금 더 간략히 보려면
+
+```
+$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:c4:7a:c4:90:e8 brd ff:ff:ff:ff:ff:ff
+3: eno2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:c4:7a:c4:90:e9 brd ff:ff:ff:ff:ff:ff
+```
+
+### netstat
+
+```
+$ netstat -i
+Kernel Interface table
+Iface             MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eno1             1500   447339      0      0 0        478545      0      0      0 BMRU
+eno2             1500        0      0      0 0             0      0      0      0 BMU
+lo              65536  2158838      0      0 0       2158838      0      0      0 LRU
+```
