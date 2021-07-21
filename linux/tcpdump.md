@@ -83,7 +83,37 @@ tcpdump src 192.168.0.10 and dst port 8080
 tcpdump src 192.168.0.10 and src port not 22
 ```
 
-## 네트워크 인터페이스 목록을 확인하는 방법
+## 네트워크 인터페이스 목록을 확인하는 방법들
+
+### ifconfig
+
+```
+$ ifconfig
+eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.248  netmask 255.255.255.0  broadcast 192.168.0.255
+        ether 0c:c4:7a:c4:90:e8  txqueuelen 1000  (Ethernet)
+        RX packets 447741  bytes 48545885 (46.2 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 478585  bytes 126847055 (120.9 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0xf7100000-f717ffff
+
+eno2: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 0c:c4:7a:c4:90:e9  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xf7200000-f7220000
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 2162586  bytes 548757155 (523.3 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2162586  bytes 548757155 (523.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
 
 ### ip
 
