@@ -21,7 +21,7 @@
   - 아래 예시는 updated 필드에서 지난 3일간 특정 시간(hour)에 갱신된 데이터만 가져오는 조회 기능을 구현한다.
   - 조회 조건에 사용되는 값은 편의상 momnet.js 를 사용했다.
 
-```
+```js
 model.find({
   updated: {
     $or: [
@@ -36,7 +36,7 @@ model.find({
 })
 ```
 
-```
+```js
 model.aggregate([{
   $addFields: {
     updatedDate: { $dateToString: { format: "%Y-%m-%d", date: "$updated" } },
