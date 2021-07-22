@@ -20,7 +20,9 @@
 - model 의 스키마에 Date 타입인 updated 필드가 있다고 가정한다.
   - 아래 예시는 updated 필드에서 지난 3일간 특정 시간(hour)에 갱신된 데이터만 가져오는 조회 기능을 구현한다.
   - 조회 조건에 사용되는 값은 편의상 momnet.js 를 사용했다.
+  - 그냥 코드만 딱 봤을때는 aggregate() 가 더 길어서 복잡해 보이는데, 조회 조건을 더 편하게 넣을 수 있다는 점에 주목하자.
 
+find() 사용
 ```js
 model.find({
   updated: {
@@ -35,7 +37,7 @@ model.find({
   console.log(docs) ;
 })
 ```
-
+aggregate() 사용
 ```js
 model.aggregate([{
   $addFields: {
