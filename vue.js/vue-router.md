@@ -5,21 +5,23 @@
 
 install
 ```
-npm install vue-router
+npm install vue-router --save
 ```
 
 main.js
 ```js
 import Vue from 'vue'
 
+const Home = { template: '<div id="home">Home Component</div>' }    // 임시 컴포넌트
+const List = { template: '<div id="List">List Component</div>' }    // 임시 컴포넌트
+
 import VueRouter from 'vue-router'    // import
 Vue.use(VueRouter)                    // 사용등록
 const router = new VueRouter({
   mode: 'history',                    // [옵션, 근데 대부분 사용할듯]
   routes: [
-    { path: '/', name: 'Home', component: Home },             // 경로에 컴포넌트 맵핑
-    { path: '/list', name: 'List', component: List },         // 경로에 컴포넌트 맵핑
-    { path: '/config', name: 'Config', component: Config }    // 경로에 컴포넌트 맵핑
+    { path: '/', name: 'Home', component: Home },       // 컴포넌트 맵핑
+    { path: '/list', name: 'List', component: List }    // 컴포넌트 맵핑
   ]
 })
 
@@ -35,7 +37,9 @@ App.vue
 ```vue
 <template>
   <div id="app">
-      <router-view></router-view>    <!-- 라우팅 경로에 맵핑된 컴포넌트가 랜더링 될 위치 -->
+      <router-link to="/">Home</router-link>        <!-- http://localhost/ 로 이동하는 링크 생성 -->
+      <router-link to="/list">List</router-link>    <!-- http://localhost/list 로 이동하는 링크 생성 -->
+      <router-view></router-view>                   <!-- 각 라우팅 경로에 맵핑된 컴포넌트가 랜더링 될 위치 -->
   </div>
 </template>
 <script>
