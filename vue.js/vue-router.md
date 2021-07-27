@@ -20,8 +20,9 @@ Vue.use(VueRouter)                    // 사용등록
 const router = new VueRouter({
   mode: 'history',                    // [옵션, 근데 대부분 사용할듯]
   routes: [
-    { path: '/', name: 'Home', component: Home },       // 컴포넌트 맵핑
-    { path: '/list', name: 'List', component: List }    // 컴포넌트 맵핑
+    { path: '/', name: 'Home', component: Home },                     // 컴포넌트 맵핑
+    { path: '/list', name: 'List', component: List },                 // 컴포넌트 맵핑
+    { path: '*', component: { template: '<div>Not Found</div>' } }    // 예외처리는 이렇게
   ]
 })
 
@@ -55,7 +56,7 @@ export default {
 </style>
 ```
 
-라우터 링크
+## 라우터 링크
 ```vue
 <router-link to="/">Home</router-link>
 ```
