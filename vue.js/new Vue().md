@@ -1,8 +1,8 @@
-new Vue()
+## new Vue()
 - vue-cli 로 첫 삽을 뜨게 되었다.
 - main.js 가 최초로 실행되는 스크립트라고 하는데 ..
 
-main.js
+### main.js
 ```js
 import App from './App.vue'
 
@@ -28,7 +28,7 @@ new Vue({
 
 > Vue 인스턴스야 App.vue 에 정의된 컴포넌트를 #app 위치에 생성해줘!
  
-index.html
+### index.html
 ```
 <!DOCTYPE html>
 <html lang="en">
