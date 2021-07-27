@@ -23,6 +23,7 @@ new Vue({
     - ``render: function (h) { return h(App) }``
   - h 는 뭐지? 하고 찾아봤는데 createElement 가 대입된다고 한다.
     - return 에서 App 을 인자로 주고 있는걸 보니 createElement 라는 함수인것 같다.
+      - Vue 인스턴스야 App.vue 에 정의된 컴포넌트를 #app 위치에 생성해줘! 라고 이해하면 될듯.
     - 일단 익히기 바쁘니 자세한건 나중에 (..)
 
 index.html
