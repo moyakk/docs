@@ -22,10 +22,12 @@ new Vue({
     - ``render: (h) => { return h(App) }``
     - ``render: function (h) { return h(App) }``
   - h 는 뭐지? 하고 찾아봤는데 createElement 가 대입된다고 한다.
-    - return 에서 App 을 인자로 주고 있는걸 보니 createElement 라는 함수인것 같다.
-      - Vue 인스턴스야 App.vue 에 정의된 컴포넌트를 #app 위치에 생성해줘! 라고 이해하면 될듯.
-    - 일단 익히기 바쁘니 자세한건 나중에 (..)
+    - ``render: function (createElement) { return createElement(App) }``
+    - createElement 라는 함수가 내장되어 있는것 같은데 왜 하필 h 라고 -_ -?
+      - 일단 익히기 바쁘니 자세한건 나중에 (..)
 
+> Vue 인스턴스야 App.vue 에 정의된 컴포넌트를 #app 위치에 생성해줘!
+ 
 index.html
 ```
 <!DOCTYPE html>
@@ -39,4 +41,16 @@ index.html
     <script src="/dist/build.js"></script>
   </body>
 </html>
+```
+
+## 추가
+render 부분에 대해서 공식 문서에는 다음과 같이 되어 있다고 한다.
+- 아직은 이해 할 수 없다 (..)
+```js
+render: function (createElement) {
+  return createElement(
+    'H'+ this. level, // tag name tag name name
+    Array in this. $slots. default // subcomponent
+  )
+}
 ```
