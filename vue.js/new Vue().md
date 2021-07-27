@@ -44,13 +44,5 @@ index.html
 ```
 
 ## 추가
-render 부분에 대해서 공식 문서에는 다음과 같이 되어 있다고 한다.
-- 아직은 이해 할 수 없다 (..)
-```js
-render: function (createElement) {
-  return createElement(
-    'H'+ this. level, // tag name tag name name
-    Array in this. $slots. default // subcomponent
-  )
-}
-```
+- h 는 hyperscript 의 약자로 react-hyperscript 등에서도 많이 쓰이는 스타일인것 같다.
+- 이런 스타일의 프레임워크를 하는 사람들의 느낌적인 느낌
