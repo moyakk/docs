@@ -3,12 +3,12 @@
 - node.js 에서 잘 쓰던 그 라우터 기능
 - URI 에 컴포넌트를 맵핑해서 사용한다.
 
-install
+### install
 ```
 npm install vue-router --save
 ```
 
-main.js
+### main.js
 ```js
 import Vue from 'vue'
 
@@ -33,7 +33,7 @@ new Vue({
 })
 ```
 
-App.vue
+### App.vue
 ```vue
 <template>
   <div id="app">
@@ -54,3 +54,12 @@ export default {
 }
 </style>
 ```
+
+라우터 링크
+```vue
+<router-link to="/">Home</router-link>
+```
+- <a> 태그처럼 지정된 위치로 이동하는 기능을 제공한다.
+- 굳이 별도로 만들다는건 뭔가 확실한 기능이 있다는건데 ..
+  - <a> 로 이동하면 페이지 전체를 다시 그리는데, <router-link> 를 쓰면 필요한 부분만 다시 그린다.
+  - router.mode 의 모드 변경시 주소가 바뀌는데, <a> 태그를 쓰면 일일이 바꿔야 한다.
