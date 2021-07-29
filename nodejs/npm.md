@@ -69,6 +69,25 @@ sudo npm install -g npm
     - Unix : `/usr/local/bin/node` or `/usr/local/lib/node_modules`
     - Windows 7, 10 : `%USERPROFILE%\AppData\Roaming\npm\node_modules`
 
+## npm list
+> npm list, npm list -g
+
+```
+npm list
+```
+- 현재 폴더에 설치된 패키지 목록을 출력한다.
+
+```
+npm list -g
+```
+- 전역(global) 모드로 설치된 패키지 목록을 출력한다.
+
+```
+npm list --depth 0
+```
+- `npm list` 를 하면 직접 설치한 패키지 목록과 의존성으로 함께 설치된 목록이 모두 나온다.
+- `--depth 0` 옵션을 주면 최상위 트리만 보여준다.
+
 ## npm info
 > npm info 또는 npm v, npm show
 
