@@ -57,7 +57,8 @@ sudo npm install -g npm
   - npm v5 이상에서는 npm install 시 자동으로 등록되나, 이하 버전에서는 `--save` 옵션을 줘야 한다.
   - package.json 이 있는 폴더에서 `npm install` 만 하면 depencencies 항목에 있는 모든 패키지가 자동으로 설치된다.
 
-## npm install, npm i
+## npm install
+> npm install 또는 npm i
 
 자주 사용되는 옵션들
 
@@ -68,7 +69,10 @@ sudo npm install -g npm
     - Unix : `/usr/local/bin/node` or `/usr/local/lib/node_modules`
     - Windows 7, 10 : `%USERPROFILE%\AppData\Roaming\npm\node_modules`
 
-### npm info
+## npm info
+> npm info 또는 npm v, npm show
+
+패키지 상세 정보를 출력한다.
 
 ```console
 npm info bootstrap
